@@ -1,6 +1,7 @@
 ota:
   - platform: esphome
     id: ota_esphome
+    # leer = OTA verschluesselt und Pflicht, nutzt den api-Key (ab ESPHome 2026.9)
     encryption:
 wifi:
   ssid: !secret wifi_ssid

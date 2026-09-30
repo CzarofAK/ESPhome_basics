@@ -18,7 +18,7 @@ packages:
 ## Inhalt
 | Block | Zweck |
 |---|---|
-| `ota`, `api` | OTA und verschlüsselte HA-API |
+| `ota`, `api` | Verschlüsselte HA-API; OTA mit leerem `encryption:` = verschlüsselt und Pflicht, nutzt den API-Key (ab ESPHome 2026.9) |
 | `wifi` | WLAN, kein Powersave, 17 dB, Fallback-AP, `reboot_timeout: 0s` |
 | `web_server` | v3, lokal, Port 80 |
 | `logger` | Level DEBUG |
@@ -26,6 +26,10 @@ packages:
 | `sensor` | WiFi Signal (60 s) |
 | `time` | Zeit von Home Assistant |
 | `button` | Restart |
+
+## Voraussetzung
+ESPHome **2026.9 oder neuer** (wegen `ota: encryption:`). Ältere Versionen melden
+`[encryption] is an invalid option for [ota.esphome]`.
 
 ## Secrets
 Benötigt `wifi_ssid`, `wifi_password`, `fallback_password`, `api_encryption_key` (siehe `secrets.yaml.example`).
